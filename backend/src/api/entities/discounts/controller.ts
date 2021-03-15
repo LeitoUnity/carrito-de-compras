@@ -7,8 +7,8 @@ export class DiscountsController {
     this.discountsRepository = new DiscountsRepository();
   }
 
-  async getAllDiscounts() {
-    return this.discountsRepository.getDiscounts({});
+  async getAllDiscounts(filters?: any) {
+    return this.discountsRepository.getDiscounts(filters || {});
   }
 
   async getDiscountByBrands(brands: Array<string>) {

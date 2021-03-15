@@ -5,7 +5,8 @@ export async function discountRoutes(app: Express) {
   const discountsService = new DiscountsController();
 
   app.get("/discounts", async (req, res) => {
-    const discounts = await discountsService.getAllDiscounts();
+    const { query } = req;
+    const discounts = await discountsService.getAllDiscounts(query);
     res.send(discounts);
   });
 
