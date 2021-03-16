@@ -129,7 +129,6 @@ export const HeaderComponent: FunctionComponent<HeaderProps> = props => {
   }, [groupedCart]);
 
   useEffect(() => {
-    console.log(discounts);
     applyDiscounts();
   }, [discounts]);
 
@@ -141,11 +140,12 @@ export const HeaderComponent: FunctionComponent<HeaderProps> = props => {
 
       setTotal(subTotal - appliedDiscount.discount);
     } else {
+      console.log(subTotal);
       setDiscountLabel("");
       setAppliedDiscountLabel("");
       setTotal(subTotal);
     }
-  }, [appliedDiscount]);
+  }, [subTotal, appliedDiscount]);
 
   const handleOpen = () => {
     setOpen(true);
