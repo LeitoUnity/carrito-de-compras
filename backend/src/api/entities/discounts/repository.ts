@@ -6,6 +6,6 @@ export class DiscountsRepository {
     DbSingleton.getDbConnection();
   }
   getDiscounts(filters: Object) {
-    return Discount.find(filters);
+    return Discount.find(filters).sort({ discount: -1 });
   }
 }
