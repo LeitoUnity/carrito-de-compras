@@ -64,6 +64,7 @@ export const HeaderComponent: FunctionComponent<HeaderProps> = props => {
 
   const fetchDiscounts = async () => {
     const brands = _.uniq(groupedCart.map(gc => gc.product.brand)).join(",");
+
     setDiscounts(
       await getDiscountsByBrands({
         brands: brands
@@ -128,6 +129,7 @@ export const HeaderComponent: FunctionComponent<HeaderProps> = props => {
   }, [groupedCart]);
 
   useEffect(() => {
+    console.log(discounts);
     applyDiscounts();
   }, [discounts]);
 

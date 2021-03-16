@@ -28,5 +28,6 @@ export const getProducts = async (filters?: Object) => {
       .data;
   } catch (error) {
     console.log(error);
+    return [];
   }
 };
