@@ -26,8 +26,10 @@ const express_1 = __importDefault(require("express"));
 const dotenv = __importStar(require("dotenv"));
 const routes_1 = require("./api/entities/discounts/routes");
 const routes_2 = require("./api/entities/products/routes");
+const cors_1 = __importDefault(require("cors"));
 dotenv.config();
 const app = express_1.default();
+app.use(cors_1.default());
 const routes = [routes_1.discountRoutes(app), routes_2.productRoutes(app)];
 app.listen(process.env.PORT, () => {
     console.log(`⚡️[server]: Server is running at https://localhost:${process.env.PORT}`);

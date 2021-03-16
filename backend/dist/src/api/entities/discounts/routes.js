@@ -15,7 +15,8 @@ function discountRoutes(app) {
     return __awaiter(this, void 0, void 0, function* () {
         const discountsService = new controller_1.DiscountsController();
         app.get("/discounts", (req, res) => __awaiter(this, void 0, void 0, function* () {
-            const discounts = yield discountsService.getAllDiscounts();
+            const { query } = req;
+            const discounts = yield discountsService.getAllDiscounts(query);
             res.send(discounts);
         }));
         app.get("/discounts/brands", (req, res) => __awaiter(this, void 0, void 0, function* () {

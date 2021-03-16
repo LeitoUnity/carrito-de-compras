@@ -15,9 +15,9 @@ class DiscountsController {
     constructor() {
         this.discountsRepository = new repository_1.DiscountsRepository();
     }
-    getAllDiscounts() {
+    getAllDiscounts(filters) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.discountsRepository.getDiscounts({});
+            return this.discountsRepository.getDiscounts(filters || {});
         });
     }
     getDiscountByBrands(brands) {

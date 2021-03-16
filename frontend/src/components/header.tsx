@@ -140,7 +140,6 @@ export const HeaderComponent: FunctionComponent<HeaderProps> = props => {
 
       setTotal(subTotal - appliedDiscount.discount);
     } else {
-      console.log(subTotal);
       setDiscountLabel("");
       setAppliedDiscountLabel("");
       setTotal(subTotal);

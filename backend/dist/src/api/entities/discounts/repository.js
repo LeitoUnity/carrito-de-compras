@@ -8,7 +8,7 @@ class DiscountsRepository {
         db_1.DbSingleton.getDbConnection();
     }
     getDiscounts(filters) {
-        return model_1.Discount.find(filters);
+        return model_1.Discount.find(filters).sort({ discount: -1 });
     }
 }
 exports.DiscountsRepository = DiscountsRepository;
