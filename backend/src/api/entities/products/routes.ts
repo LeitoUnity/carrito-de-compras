@@ -15,9 +15,6 @@ export async function productRoutes(app: Express) {
     const { query } = req;
     let { minPrice, maxPrice } = query;
 
-    console.log(minPrice);
-    console.log(maxPrice);
-
     const products = await productsController.getProductsByPrice(
       _.toNumber(minPrice),
       _.toNumber(maxPrice)
