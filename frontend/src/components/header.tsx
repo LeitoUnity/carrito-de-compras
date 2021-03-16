@@ -95,6 +95,8 @@ export const HeaderComponent: FunctionComponent<HeaderProps> = props => {
               discount.discount
             } en tu compra!`
           );
+        } else {
+          setDiscountLabel("");
         }
       }
 

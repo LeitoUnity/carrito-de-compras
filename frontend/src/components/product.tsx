@@ -44,7 +44,7 @@ export const ProductComponent: FunctionComponent<ProductProps> = props => {
       <Card>
         <CardContent>
           <img
-            src={"https://" + product.image.toString()}
+            src={`https://${product.image}`}
             className={classes.productImage}
             alt={product.id.toString()}
           />

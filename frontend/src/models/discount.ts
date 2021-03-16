@@ -1,5 +1,5 @@
 export interface Discount {
-  brand: String;
+  brand: string;
   threshold: number;
   discount: number;
 }

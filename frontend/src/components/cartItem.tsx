@@ -26,7 +26,7 @@ export const CartItemComponent: FunctionComponent<CartItemProps> = props => {
     <Grid container item direction="row" justify="space-around">
       <Grid item xs={3}>
         <img
-          src={"https://" + product.image.toString()}
+          src={`https://${product.image}`}
           className={classes.productImage}
           alt={product.id.toString()}
         />
