@@ -11,6 +11,16 @@ export const getDiscounts = async (filters?: Object) => {
     return [];
   }
 };
+export const getDiscountsByBrands = async (filters?: Object) => {
+  try {
+    return (
+      await axios.get<Array<Discount>>("/discounts/brands", { params: filters })
+    ).data;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};
 
 export const getProducts = async (filters?: Object) => {
   try {

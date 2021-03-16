@@ -1,5 +1,5 @@
 import { Grid } from "@material-ui/core";
-import React, { FunctionComponent, useState, useEffect } from "react";
+import React, { FunctionComponent } from "react";
 import { FilterComponent } from "./filter";
 import { ProductComponent } from "./product";
 import { Product } from "../models/product";
@@ -22,7 +22,7 @@ export const BodyComponent: FunctionComponent<BodyProps> = props => {
       item
       spacing={3}
     >
-      <Grid item alignItems="flex-start" xs={3}>
+      <Grid item xs={3}>
         <FilterComponent min={0} max={100000} numberOfSegments={5} />
       </Grid>
       <Grid

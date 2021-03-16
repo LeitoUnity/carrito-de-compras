@@ -3,13 +3,11 @@ import React, { FunctionComponent, useState, useEffect } from "react";
 import { BodyComponent } from "./components/body";
 import { HeaderComponent } from "./components/header";
 import { Product } from "./models/product";
-import { getProducts, getDiscounts } from "./Api";
-import { Discount } from "./models/discount";
+import { getProducts } from "./Api";
 
 const LiderApp: FunctionComponent<{}> = () => {
-  const [cart, setCartItems] = useState<Array<Number>>([]);
+  const [cart, setCartItems] = useState<Array<number>>([]);
   const [products, setProducts] = useState<Array<Product>>([]);
-  const [discounts, setDiscounts] = useState<Array<Discount>>([]);
 
   const addCartItem = (item: Product) => {
     setCartItems([...cart, item.id]);
@@ -29,17 +27,12 @@ const LiderApp: FunctionComponent<{}> = () => {
       setProducts(await getProducts());
     };
 
-    const fetchDiscounts = async () => {
-      setDiscounts(await getDiscounts());
-    };
-
-    fetchDiscounts();
     fetchProducts();
   }, []);
 
   return (
     <Grid direction="column" container spacing={0}>
-      <HeaderComponent cart={cart} products={products} discounts={discounts} />
+      <HeaderComponent cart={cart} products={products} />
       <BodyComponent
         addCartItem={addCartItem}
         removeCartItem={removeCartItem}

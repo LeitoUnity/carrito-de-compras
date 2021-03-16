@@ -46,6 +46,7 @@ export const ProductComponent: FunctionComponent<ProductProps> = props => {
           <img
             src={"https://" + product.image.toString()}
             className={classes.productImage}
+            alt={product.id.toString()}
           />
           <Divider></Divider>
           <Typography variant="body2" component="p">
@@ -69,26 +70,35 @@ export const ProductComponent: FunctionComponent<ProductProps> = props => {
               Agregar
             </Button>
           ) : (
-            <Grid container>
-              <IconButton
-                className={classes.productButton}
-                onClick={() => {
-                  setProductQuantity(productQuantity - 1);
-                  removeCartItem(product);
-                }}
-              >
-                -
-              </IconButton>
-              {productQuantity}
-              <IconButton
-                className={classes.productButton}
-                onClick={() => {
-                  setProductQuantity(productQuantity + 1);
-                  addCartItem(product);
-                }}
-              >
-                +
-              </IconButton>
+            <Grid
+              container
+              direction="row"
+              justify="space-evenly"
+              alignItems="center"
+            >
+              <Grid>
+                <IconButton
+                  className={classes.productButton}
+                  onClick={() => {
+                    setProductQuantity(productQuantity - 1);
+                    removeCartItem(product);
+                  }}
+                >
+                  -
+                </IconButton>
+              </Grid>
+              <Grid>{productQuantity}</Grid>
+              <Grid>
+                <IconButton
+                  className={classes.productButton}
+                  onClick={() => {
+                    setProductQuantity(productQuantity + 1);
+                    addCartItem(product);
+                  }}
+                >
+                  +
+                </IconButton>
+              </Grid>
             </Grid>
           )}
         </CardActions>
