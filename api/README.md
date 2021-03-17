@@ -20,7 +20,7 @@ For running a docker container with this image just run:
 $ make backend-up
 ```
 
-This will serve the backend app on your **localhost:8000**
+This will serve the backend app on your **localhost:3000**
 
 ### Note: The page from this container may take some seconds to be available, please be patient :)
 
@@ -41,5 +41,9 @@ When you finish using the backend remember to stop the container, for that just 
 ```sh
 $ make database-down
 ```
+
+### Testing and Deploying
+
+Sadly I ran out of time before being able to implement automated testing on this project as well as deploying on heroku.
 
 Anything else?, you are always welcome to have a look at the Makefile ;)
