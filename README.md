@@ -57,4 +57,8 @@ When you finish using the project remember to stop it, for that just run the fol
 $ make project-down
 ```
 
+### Testing and Deploying
+
+Sadly I ran out of time before being able to implement automated testing on this project as well as deploying on heroku.
+
 Anything else?, you are always welcome to have a look at every project module Makefiles ;)
