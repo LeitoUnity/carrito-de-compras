@@ -1,2 +1,2 @@
-import mongoose from "mongoose";
-export declare const Discount: mongoose.Model<mongoose.Document<any, {}>, {}>;
+/// <reference types="mongoose" />
+export declare const Discount: import("mongoose").Model<import("mongoose").Document<any, {}>, {}>;

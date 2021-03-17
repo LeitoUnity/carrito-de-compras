@@ -1,16 +1,16 @@
-import mongoose from "mongoose";
+import * as Mongoose from "mongoose";
 import * as dotenv from "dotenv";
 
 dotenv.config();
 
 export class DbSingleton {
-  private static dbConnection: typeof mongoose;
+  private static dbConnection: typeof Mongoose;
 
   constructor() {}
 
-  public static async getDbConnection(): Promise<typeof mongoose> {
+  public static async getDbConnection(): Promise<typeof Mongoose> {
     if (!DbSingleton.dbConnection) {
-      DbSingleton.dbConnection = await mongoose.connect(
+      DbSingleton.dbConnection = await Mongoose.connect(
         `${process.env.DB_URL}`,
         {
           auth: {

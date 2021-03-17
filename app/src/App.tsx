@@ -1,9 +1,9 @@
-import { Grid } from "@material-ui/core";
+import { Grid, Button } from "@material-ui/core";
 import React, { FunctionComponent, useState, useEffect } from "react";
 import { BodyComponent } from "./components/body";
 import { HeaderComponent } from "./components/header";
 import { Product } from "./models/product";
-import { getProducts } from "./Api";
+import { getProducts, getProductsA } from "./Api";
 
 const LiderApp: FunctionComponent<{}> = () => {
   const [cart, setCartItems] = useState<Array<number>>([]);

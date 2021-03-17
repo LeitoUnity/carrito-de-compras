@@ -1,5 +1,5 @@
 database-docker-up:
-	docker run -d --rm -e MONGO_INITDB_ROOT_USERNAME=brandDiscountsUser -e MONGO_INITDB_ROOT_PASSWORD=brandDiscountsPassword -p 27017:27017 --name mongodb-local -v "$(shell pwd)/database":/database mongo:3.6.8
+	docker run -d --rm -e MONGO_INITDB_ROOT_USERNAME=brandDiscountsUser -e MONGO_INITDB_ROOT_PASSWORD=brandDiscountsPassword -p 27017:27017 --name mongodb-local --network lider --ip 172.16.1.20 -v "$(shell pwd)/database":/database mongo:3.6.8
 
 database-provision:
 	docker exec mongodb-local bash -c './database/import.sh localhost'

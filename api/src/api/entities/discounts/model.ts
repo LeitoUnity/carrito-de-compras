@@ -1,6 +1,6 @@
-import mongoose, { Schema } from "mongoose";
+import { model, Schema } from "mongoose";
 
-export const Discount = mongoose.model(
+export const Discount = model(
   "Discount",
   new Schema({
     brand: String,

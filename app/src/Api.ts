@@ -14,7 +14,9 @@ export const getDiscounts = async (filters?: Object) => {
 export const getDiscountsByBrands = async (filters?: Object) => {
   try {
     return (
-      await axios.get<Array<Discount>>("/discounts/brands", { params: filters })
+      await axios.get<Array<Discount>>("/discounts/brands", {
+        params: filters
+      })
     ).data;
   } catch (error) {
     console.log(error);
@@ -24,8 +26,11 @@ export const getDiscountsByBrands = async (filters?: Object) => {
 
 export const getProducts = async (filters?: Object) => {
   try {
-    return (await axios.get<Array<Product>>("/products", { params: filters }))
-      .data;
+    return (
+      await axios.get<Array<Product>>("/products", {
+        params: filters
+      })
+    ).data;
   } catch (error) {
     console.log(error);
     return [];

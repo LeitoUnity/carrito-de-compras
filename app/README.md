@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+# Lider Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Welcome!
 
-## Available Scripts
+Hello! This is the lider challenge frontend module.
 
-In the project directory, you can run:
+### Installation
 
-### `npm start`
+For getting this module up and running you must build the docker image locally from the docker file. You can do it by running the following command from your terminal:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```sh
+$ make frontend-build
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This will create a docker image called **lider-frontend** that will let you run a container with the resulting image.
 
-### `npm test`
+For running a docker container with this image just run:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+$ make frontend-up
+```
 
-### `npm run build`
+This will serve the frontend app on your **localhost:3000**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Note: The page from this container may take some seconds to be available, please be patient :)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This frontend image have live-update feature, this means every change that is made to the files will update the page for it to be reflected, however changes made to the **package.json** file will require the container to be restarted.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Restarting the container
 
-### `npm run eject`
+For restarting the container just run this command in your terminal:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+$ make database-reset
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Getting the container down
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+When you finish using the frontend remember to stop the container, for that just run the following command in your terminal:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```sh
+$ make database-down
+```
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Anything else?, you are always welcome to have a look at the Makefile ;)
